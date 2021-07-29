@@ -5,9 +5,9 @@ services:
     ports:
       - "9560:9560"
     volumes:
-      - ~/config.yaml
-    command:
-      - "query-exporter config.yaml"
+      - ./config.yaml:/config.yaml:ro
+    # command:
+    #   - "query-exporter /config.yaml"
     networks:
       - proxy-net
 
