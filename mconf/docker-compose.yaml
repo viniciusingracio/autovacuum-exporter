@@ -1,0 +1,16 @@
+version: '3'
+services:
+  query-exporter:
+    image: adonato/query-exporter:latest
+    ports:
+      - "9560:9560"
+    volumes:
+      - ./config.yaml:/config.yaml:ro
+    # command:
+    #   - "query-exporter /config.yaml"
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    driver: bridge
